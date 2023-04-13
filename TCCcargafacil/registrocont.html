@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro de usuário</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body>
+    	<div id="titulo">
+			<header>
+			<img src="imagens\logo.png" alt="logotipo">
+			<span><h1>Carga Fácil</h1></span>
+		  </header>
+			<style>
+			  #titulo {
+				  font-family: Arial, Helvetica, sans-serif;
+				  text-align: center;
+				  border-style: inset;
+				  border-color: black;
+				  padding: 0px;
+				  padding-top: 15px;  
+				  background-color: black;
+				  color: white;
+			  }
+			  header img {
+				  display: inline-block;
+				  vertical-align: middle;
+				  margin-right: 10px;
+			  }
+			  header span {
+				  display: inline-block;
+				  vertical-align: middle;
+			  }
+			  img{
+				  height: 60px;
+			  }
+			</style>
+		  </div>
+		<div id="form">
+			<form>
+				<h1>Registro</h1><br>
+				<div class="mb-3">
+				  <label for="nome" class="form-label">Nome completo:</label>
+				  <input type="text" class="form-control" id="nome" aria-describedby="nome">
+				  <div id="nome" class="form-text"></div>
+				</div>
+				<div class="mb-3">
+					<label for="cpf" class="form-label">CPF/CNPJ:</label>
+					<input type="text" class="form-control" id="cpf" aria-describedby="cpf">
+					<div id="cpf" class="form-text"></div>
+				  </div>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email:</label>
+					<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text"></div>
+				</div>
+				<div id="foto">
+					<label for="imagem">Selecione a foto de perfil:</label>
+        			<input  type="file" id="imagem" name="imagem" accept="image/*" onchange="previewImage(event)">
+        			<div id="img" class="img"><img id="imagem-preview"><br>
+        			<style>
+            			#imagem-preview {
+              			max-width: 250px;
+              			max-height: 250px;
+            			}
+        			</style>
+        			<script>
+            			function previewImage(event) {
+                		const input = event.target;
+                		if (input.files && input.files[0]) {
+                		const reader = new FileReader();
+                		reader.onload = function(e) {
+                		const preview = document.getElementById("imagem-preview");
+                		preview.src = e.target.result;
+                		}
+            			reader.readAsDataURL(input.files[0]);
+            			}
+        			}
+        			</script>
+					</div>
+				</div><br>
+				<div class="mb-3">
+					<label for="senha" class="form-label">Senha:</label>
+					<input type="password" class="form-control" id="senha">
+			  	</div>
+			  	<div class="mb-3">
+					<label for="confsenha" class="form-label">Confirme a senha:</label>
+					<input type="password" class="form-control" id="confsenha">
+		  		</div>
+				<div id="button">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+		  	</form>
+		</div>
+			  <style>
+				h1{
+					text-align: center;
+				}
+				form{
+					font-family: Arial, Helvetica, sans-serif;
+					width: 400px;
+					margin: 15px auto;
+					background-color: #fff;
+					padding: 20px;
+					border-radius: 5px;
+					box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+				}
+				#button{
+					text-align: center;
+				}
+			  </style>
+		
+	</body>
+</html>
