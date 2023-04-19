@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página de Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		.container {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		button[type=submit] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 12px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button[type=submit]:hover {
+			background-color: #45a049;
+		}
+
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #f44336;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: left;
+		}
+
+		.cancelbtn:hover {
+			background-color: #da190b;
+		}
+
+		.imgcontainer {
+			text-align: center;
+			margin: 24px 0 12px 0;
+			position: relative;
+		}
+
+		img.avatar {
+			width: 40%;
+			border-radius: 50%;
+		}
+
+		.container form {
+			border: 3px solid #f1f1f1;
+		}
+
+		.container form label {
+			font-weight: bold;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.container form input[type=text]:focus, input[type=password]:focus {
+			background-color: #ddd;
+			outline: none;
+		}
+
+		@media screen and (max-width: 600px) {
+			.container {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+    <div class="titulo" id="titulo">
+            
+        <h1><p>Carga Fácil</p></h1>
+    <style>
+        #titulo {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            border-style: inset;
+            border-color: black;
+            padding: 0px;
+            padding-top: 15px;  
+            background-color: black;
+            color: white;
+        }
+    </style>
+    </div>
+	<div class="container">
+		<form action="">
+			<div class="imgcontainer">
+				<img src="avatar.png" alt="Avatar" class="avatar">
+			</div>
+
+			<label for="uname"><b>Nome de Usuário</b></label>
+			<input type="text" placeholder="Insira seu nome de usuário" name="uname" required>
+
+			<label for="psw"><b>Senha</b></label>
+			<input type="password" placeholder="Insira sua senha" name="psw" required>
+
+			<button type="submit">Entrar</button>
+			<label>
+				<input type="checkbox" checked="checked" name="remember"> Lembrar-me
+			</label>
+			<button type="button" class="cancelbtn">Cancelar</button>
+			<span class="psw">Esqueceu a <a href="#">senha?</
+            </span>
+        </form>
+    </div>
+    </body>
+    </html>
