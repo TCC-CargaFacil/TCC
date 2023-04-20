@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -90,6 +89,12 @@
             text-decoration: none;
         }
 
+        .subtles {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
         @media only screen and (min-width: 768px) {
             .main {
                 display: flex;
@@ -105,14 +110,29 @@
 </head>
 
 <body>
-    <header class="header">
-        <img src="Imagens/voltar.png" alt="#">
-    </header>
     <main class="main">
         <div>
-            <img src="" alt="#">
-            <h2>Carga Fácil</h2>
-            <p>Esteja conectado com quem precisa de você!</p>
+            <img src="Imagens/voltar.png" alt="#" style="padding-left: 0%;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <table>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <img src="" alt="#">
+                        </td>
+                        <td>
+                            <h2>Carga Fácil</h2>
+                        </td>
+                    </tr>    
+                </table>
+            </div>            
+            <div class="subtles">
+                <p>Esteja conectado com quem precisa de você!</p>
+                <a href="registrocontratante.html" class="caincont">Clique para criar conta como empresa</a>
+            </div>
+            <p></p>
             <form class="form-container" action="#" method="POST">
                 <input type="text" name="nome" placeholder="Nome">
                 <input type="text" name="cpf_cnpj" placeholder="CPF ou CNPJ">
