@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        header button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        header img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main img {
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            margin-right: 20px;
+        }
+
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        main button {
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        main a {
+            display: inline-block;
+            background-image: url("https://via.placeholder.com/10");
+            background-size: 10px;
+            background-repeat: no-repeat;
+            background-position: right center;
+            padding-right: 15px;
+            /* espaço para a imagem */
+        }
+
+        @media only screen and (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+
+            main img {
+                margin: 0 auto;
+                margin-bottom: 20px;
+            }
+
+            but {
+                background-color: purple;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                /* valor arbitrário, ajuste conforme preferência */
+                font-size: 16px;
+                padding: 10px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button onclick="history.back()"><img src="https://via.placeholder.com/25" alt="Voltar">Voltar</button>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td><img src="https://via.placeholder.com/150" alt="Imagem do perfil"></td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td><a href="#">Alterar foto de perfil</a><br></td>
+            </tr>
+        </table>
+        <br><br><br><br>
+        <div>
+            <h1>Nome Completo: </h1>
+            <a href="#" class="link-with-icon">xxxxxx</a><br><br>
+            <p>Número de Contato: </p>
+            <a href="#" class="link-with-icon">xxxxxxxxx</a><br><br>
+            <p>Email: </p>
+            <a href="#" class="link-with-icon">seuemail@exemplo.com</a><br><br>
+            <p>Senha: </p>
+            <div>
+                <input type="password" id="password-field" value="********">
+                <button id="password-toggle-button" onclick="togglePasswordVisibility()"><!--CRIAR FUNÇÃO NO JAVA-->
+                </button>
+            </div>
+            <a href="#" class="link-with-icon">Alterar Senha</a><br><br><br>
+            <p>Informações para verificação</p>
+            <a href="#" class="link-with-icon">Clique para adicionar</a><br><br><br>
+            <button class="but">Excluir conta</button>
+        </div>
+        
+
+    </main>
+</body>
+
+</html>
