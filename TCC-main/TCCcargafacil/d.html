@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro de usuário</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body>
+    	<div id="titulo">
+        	<h1><p>Carga Fácil</p></h1>
+    	<style>
+        	#titulo {
+            	font-family: Arial, Helvetica, sans-serif;
+            	text-align: center;
+            	border-style: inset;
+            	border-color: black;
+            	padding: 0px;
+            	padding-top: 15px;  
+            	background-color: black;
+            	color: white;
+        	}
+    	</style>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	</div>
+        	<label for="imagem">Selecione a foto de perfil:</label>
+        	<input  type="file" id="imagem" name="imagem" accept="image/*" onchange="previewImage(event)">
+        	<img id="imagem-preview">
+        <style>
+            	#imagem-preview {
+              	max-width: 250px;
+              	max-height: 250px;
+            	}
+        </style>
+        <script>
+            	function previewImage(event) {
+                	const input = event.target;
+                	if (input.files && input.files[0]) {
+                	const reader = new FileReader();
+                	reader.onload = function(e) {
+                	const preview = document.getElementById("imagem-preview");
+                	preview.src = e.target.result;
+                	}
+            	reader.readAsDataURL(input.files[0]);
+            	}
+        		}
+        </script>
+	</body>
+</html>

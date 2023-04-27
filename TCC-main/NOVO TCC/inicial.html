@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>Custom Controls</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+    <script>
+        let map;
+        let chicago = { lat: 41.85, lng: -87.65 };
+        let directionsService;
+        let directionsRenderer;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: chicago,
+                zoom: 8,
+            });
+
+            // Add the center control to the map
+            map.controls[google.maps.ControlPosition.TOP_CENTER].push(createCenterControl(map));
+
+            // Add the destination control to the map
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(createDestinationControl(map));
+
+            // Initialize the directions service and renderer
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+        }
+
+        /**
+         * Creates a control that recenters the map on Chicago.
+         */
+        function createCenterControl(map) {
+            const controlButton = document.createElement("button");
+
+            // Set CSS for the control.
+            controlButton.style.backgroundColor = "#fff";
+            controlButton.style.border = "2px solid #fff";
+            controlButton.style.borderRadius = "3px";
+            controlButton.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+            controlButton.style.color = "rgb(25,25,25)";
+            controlButton.style.cursor = "pointer";
+            controlButton.style.fontFamily = "Roboto,Arial,sans-serif";
+            controlButton.style.fontSize = "16px";
+            controlButton.style.lineHeight = "38px";
+            controlButton.style.margin = "8px 0 22px";
+            controlButton.style.padding = "0 5px";
+            controlButton.style.textAlign = "center";
+            controlButton.textContent = "Center Map";
+            controlButton.title = "Click to recenter the map";
+            controlButton.type = "button";
+
+            // Setup the click event listeners: simply set the map to Chicago.
+            controlButton.addEventListener("click", () => {
+                map.setCenter(chicago);
+            });
+
+            return controlButton;
+        }
+
+        /**
+         * Creates a control that allows the user to enter the destination address.
+         */
+        function createDestinationControl(map) {
+            const controlDiv = document.createElement("div");
+            const controlUI = document.createElement("div");
+            const controlText = document.createElement("input");
+            controlText.type = "text";
+            controlText.placeholder = "Enter destination address";
+            controlText.style.width = "200px";
+            controlText.style.marginTop = "5px";
+            controlUI.appendChild(controlText);
+            controlDiv.appendChild(controlUI);
+
+            controlUI.style.backgroundColor = "#fff";
+            controlUI.style.border = "2px solid #fff";
+            controlUI.style.borderRadius = "3px";
+            controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+            controlUI.style.color = "rgb(25,25,25)";
+            controlUI.style.cursor = "pointer";
+            controlUI.style.fontFamily = "Roboto,Arial,sans-serif";
+            controlUI.style.fontSize = "16px";
+            controlUI.style.lineHeight = "38px";
+            controlUI.style.paddingLeft = "10px";
+            controlUI.style.paddingRight = "10px";
+            controlUI.style.textAlign = "left";
+            controlUI.title = "Enter destination address";
+            // Setup the click event listener: get the destination and calculate the route.
+            controlUI.addEventListener("click", () => {
+                const destination = controlText.value;
+                calculateAndDisplayRoute(directionsService, directionsRenderer, destination);
+            });
+
+            return controlDiv;
+        }
+
+        /**
+         * Calculates and displays the route on the map.
+         */
+        function calculateAndDisplayRoute(directionsService, directionsRenderer, destination) {
+            directionsService.route(
+                {
+                    origin: chicago,
+                    destination: destination,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                },
+                (response, status) => {
+                    if (status === "OK") {
+                        directionsRenderer.setDirections(response);
+                    } else {
+                        window.alert("Directions request failed due to " + status);
+                    }
+                }
+            );
+        }
+    </script>
+</body>
+
+</html>
