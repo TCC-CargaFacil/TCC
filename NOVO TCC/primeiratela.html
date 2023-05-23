@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página com Navbar e Mapa</title>
+  <style>
+    /* Estilos para a navbar */
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .navbar a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Estilos para o mapa */
+    #map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; 
+      bottom: 0;
+      z-index: 0;
+    }
+
+    /* Estilos para a tag head */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #f2f2f2;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    /* Estilos para a seta e lista de itens */
+    .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .arrow img {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+    }
+
+    .arrow:hover img {
+      transform: rotate(180deg);
+    }
+
+    .item-list {
+      display: none;
+      background-color: #f2f2f2;
+      padding: 10px;
+      transition: margin-top 0.3s;
+    }
+
+    .item-list.open {
+      margin-top: -200px;
+    }
+
+    .item-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item-list li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="#">Opção 1</a>
+      <a href="#">Opção 2</a>
+      <a href="#">Opção 3</a>
+      <a href="#">Opção 4</a>
+      <a href="#">Opção 5</a>
+      <a href="#">Opção 6</a>
+    </div>
+</nav>
+
+  <div id="map"></div>
+
+  <div class="arrow" onclick="toggleItemList()">
+    <img src="arrow.png" alt="Seta">
+  </div>
+
+  <div class="item-list" id="itemList">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Função para alternar a exibição da lista de itens
+    function toggleItemList() {
+      $('#itemList').toggleClass('open');
+    }
+
+    // Código para inicializar o mapa com a localização do dispositivo
+    function initMap() {
+      // Obtém a localização do dispositivo
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        // Cria o mapa
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: latitude, lng: longitude},
+          zoom: 12
+        });
+
+        // Adicione quaisquer outros marcadores, sobreposições etc. aqui
+      });
+    }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap" async defer></script>
+</body>
+</html>

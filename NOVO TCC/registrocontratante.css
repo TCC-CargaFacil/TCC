@@ -115,6 +115,11 @@ p:last-child {
     margin-bottom: 0px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
