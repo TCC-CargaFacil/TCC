@@ -1,64 +1,28 @@
-/* Estilos para a navbar */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
+.rodape {
+  background-color: #333; /* Cor de fundo da barra do rodapé */
+  color: #fff; /* Cor do texto da barra do rodapé */
+  padding: 20px; /* Espaçamento interno da barra do rodapé */
+  text-align: center; /* Centralizar o conteúdo horizontalmente */
+  left: 0; /* Alinhar à esquerda */
+  bottom: 0; /* Alinhar na parte inferior */
+  width: 100%; /* Largura total da página */
+  height: 50px;
+  position: relative;
+}
 
-  .navbar a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: #333;
-  }
+.seta-rodape {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
 
-  /* Estilos para o mapa */
-  #map {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
-  /* Estilos para a seta e lista de itens */
-  .arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-    cursor: pointer;
-  }
+.expandido {
+  height: 50vh; /* Altura do rodapé expandido, nesse caso, 50% da altura da janela do navegador */
+  transition: height 0.5s; /* Adicionar uma transição suave para a animação */
+}
 
-  .arrow img {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s;
-  }
-
-  .arrow:hover img {
-    transform: rotate(180deg);
-  }
-
-  .item-list {
-    display: none;
-    background-color: #f2f2f2;
-    padding: 10px;
-    transition: margin-top 0.3s;
-  }
-
-  .item-list.open {
-    margin-top: -200px;
-  }
-
-  .item-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .item-list li {
-    margin-bottom: 10px;
-  }
