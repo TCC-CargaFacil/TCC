@@ -1,28 +1,42 @@
-.rodape {
-  background-color: #333; /* Cor de fundo da barra do rodapé */
-  color: #fff; /* Cor do texto da barra do rodapé */
-  padding: 20px; /* Espaçamento interno da barra do rodapé */
-  text-align: center; /* Centralizar o conteúdo horizontalmente */
-  left: 0; /* Alinhar à esquerda */
-  bottom: 0; /* Alinhar na parte inferior */
-  width: 100%; /* Largura total da página */
-  height: 50px;
-  position: relative;
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #131527;
+  transition: height 0.3s;
+  overflow: hidden;
 }
 
-.seta-rodape {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  cursor: pointer;
+#expand-button {
+  text-align: center;
+  background-color: transparent;
+}
+
+#content {
+  height: 0;
+  transition: height 0.3s;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.procure {
+  border-style:solid;
+  border-color: white;
+  border-radius: 20px;
   padding: 10px;
+  background-color: transparent;
+  align-items: center;
 }
 
-
-.expandido {
-  height: 50vh; /* Altura do rodapé expandido, nesse caso, 50% da altura da janela do navegador */
-  transition: height 0.5s; /* Adicionar uma transição suave para a animação */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Adicionado para alinhar horizontalmente */
+  margin-top: 20px; /* Adicionado para espaçamento no topo */
 }
+
 
