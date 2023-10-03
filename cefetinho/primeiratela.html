@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicial - Carga Facil</title>
+  <link rel="stylesheet" href="primeiratela.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-inverse" style="background-color: #131527; border-color: #000; color: white;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Carga Fácil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel" style="background-color: #131527;">
+        <div class="offcanvas-header" style="background-color: #131527;">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel" style="background-color: #131527;">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="background-color: #131527;"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: #131527;">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" style="background-color: #131527;">
+            <li class="nav-item" style="padding: 0px; margin: 0px;">
+              <a class="nav-link active" aria-current="page" href="perfil_cam.html" style="padding: 0px;">Perfil</a>
+            </li>
+            <p style="margin-bottom: 0px;">------------------------</p>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="corridas.html" style="padding: 0px;">Corridas</a>
+            </li>
+            <p style="margin-bottom: 0px;">------------------------</p>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagamentos.html" style="padding: 0px;">Pagamentos</a>
+            </li>
+            <p style="margin-bottom: 0px;">------------------------</p>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="configuracoes.html"
+                style="padding: 0px;">Configurações</a>
+            </li>
+            <p style="margin-bottom: 0px;">------------------------</p>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="seguranca.html" style="padding: 0px;">Segurança</a>
+            </li>
+            <p style="margin-bottom: 0px;">------------------------</p>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="ajuda.html" style="padding: 0px;">Ajuda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+  <!--FIM DA IMPLEMENTAÇÃO DA NAVBAR-->
+
+  <!-- Ideia de implementação do mapa -->
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119857.98152105811!2d-44.98406268928252!3d-20.152315922571805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa0a5bc241bce2f%3A0xf7e939bd5077b17d!2sDivin%C3%B3polis%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1693484326612!5m2!1spt-BR!2sbr" 
+    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+  <!--INICIO DA IMPLEMENTAÇÃO DO MAPA-->
+  <iframe src="mapa.html" frameborder="0" height="630px" width="100%"
+    style="display: flex; margin: 0px; padding: 0px;"></iframe>
+  <!--FIM DA IMPLEMENTAÇÃO DO MAPA-->
+
+  <!--INICIO DA IMPLEMENTAÇÃO DA BARRA DE CONTARTANTES-->
+  <div id="footer">
+    <div id="expand-button">
+      <button onclick="toggleExpansion()" style="background-color: transparent; border: none;"><img height="40px"
+          width="70px" style="background-color: transparent;" src="Imagens/setacima.png" alt="#"></button>
+    </div>
+    <div id="content">
+      <div class="search-container">
+        <input type="search" class="procure" placeholder="Pesquisar">
+      </div>
+
+      <table class="table" id="a">
+        <thead>
+          <tr>
+            <th>Nome da Empresa</th>
+            <th>Detalhes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aqui você vai usar um loop para gerar as linhas da tabela com os dados do banco de dados -->
+          <tr>
+            <td>Nome da Empresa 1</td>
+            <td><a href="aceitarcorrida.html">Aceitar Corrida</a></td>
+          </tr>
+          <tr>
+            <td>Nome da Empresa 2</td>
+            <td><a href="aceitarcorrida.html">Aceitar Corrida</a></td>
+          </tr>
+          <!-- ... e assim por diante para cada empresa -->
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Conteúdo da barra expansível
+        ATENÇÃO RAFAEL, FAZER UMA TABELA OU LISTA AQUI, ELA VAI PUXAR AS EMPRESAS DIRETO DO BD
+        -->
+  </div>
+
+  <script src="primeiratela.js"></script>
+</body>
+
+</html>
