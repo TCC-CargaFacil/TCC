@@ -1,0 +1,56 @@
+    .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0); /* Fundo transparente */
+    color: white; /* Cor do texto */
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #131527;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .table a {
+    color: #007bff; /* Cor de link padrão do Bootstrap */
+    text-decoration: none;
+  }
+  
+  .table a:hover {
+    text-decoration: underline;
+  }
+
+  /* Estilo para centralizar os botões */
+.button-container {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para os botões */
+.button-container a {
+    text-decoration: none;
+}
+
+.button-container button {
+    border-radius: 30px;
+    padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
+    font-size: 18px; /* Tamanho da fonte */
+    background-color: #323866; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    cursor: pointer;
+    margin: 3px; /* Espaço entre os botões */
+    justify-content: center;
+}
