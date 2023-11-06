@@ -38,36 +38,14 @@ header {
   }
   
   .profile-image img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
+    margin-top: 50px;
   }
-  
-  .change-image-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .change-image-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  table {
-    border-collapse: separate;
-    border-spacing: 10px; /* Espaçamento entre as células */
-    margin-top: 25px;
-    padding-left: 50px;
-  }
-  
-  td {
-    padding: 0px; /* Espaçamento interno das células */
-  }
+
   
   .center-container {
     display: flex;
@@ -76,15 +54,15 @@ header {
   }
   
   .center-button {
-    margin-top: 15px;
-    align-items: center;
-    text-align: center;
-    border-radius: 30px;
-    justify-items: center;
-    background-color: #323866;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-size-adjust: 7px;
+    margin-top: 25px;
+      width: 100%;
+      height: flex;
+      background-color: #323866;
+      border: none;
+      color: #fff;
+      font-size: 15px;
+      border-radius: 75px; /* Aumentei o valor do border-radius */
+      margin-bottom: 30px;
+      cursor: pointer;
   }
   
