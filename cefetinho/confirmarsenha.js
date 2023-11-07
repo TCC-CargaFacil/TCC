@@ -1,5 +1,5 @@
 var senha = document.getElementById("senha"), 
-confirmar_senha = document.getElementById("confsenha");
+confirmar_senha = document.getElementById("confirmar-senha");
 
 function validatePassword() {
     if (senha.value != confirmar_senha.value) {

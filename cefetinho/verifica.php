@@ -38,7 +38,7 @@ require("adm/conexao.php");
               $_SESSION['id'] = $dados['idContratante'];
               $_SESSION['perfil'] = $dados['Perfil'];
               $_SESSION['logado'] = true;
-  			header("Location: pagamentos.html"); //colocar a pagina de destino do contratante
+  			header("Location: primeiratelacont.html"); //colocar a pagina de destino do contratante
           }
     	else{
   			header("Location: login.html");
