@@ -17,7 +17,7 @@ $resultadoEmailContratante = mysqli_query($con, $verificaEmailContratante);
 
 if (mysqli_num_rows($resultadoEmailContratante) > 0) {
     // O email já está cadastrado, redirecione para a página inicial com uma mensagem de erro
-    echo "<script>alert('Email já cadastrado. Tente novamente.'); window.location='1tela.html'</script>";
+    echo "<script>alert('Email já cadastrado. Tente novamente.'); window.location='Inicio/1tela.html'</script>";
 } else {
     // O email não está cadastrado, agora verifique o CPF
     // Consulta para verificar se o CPF já está cadastrado na tabela contratante
@@ -26,7 +26,7 @@ if (mysqli_num_rows($resultadoEmailContratante) > 0) {
 
     if (mysqli_num_rows($resultadoCPFContratante) > 0) {
         // O CPF já está cadastrado, redirecione para a página inicial com uma mensagem de erro
-        echo "<script>alert('CPF já cadastrado. Tente novamente.'); window.location='1tela.html'</script>";
+        echo "<script>alert('CPF já cadastrado. Tente novamente.'); window.location='Inicio/1tela.html'</script>";
     } else {
         // O email e o CPF não estão cadastrados, insira os dados na tabela contratante
         $sql = "INSERT INTO contratante (idcontratante, nome, cpf, email, senha, confsenha) 
@@ -34,7 +34,7 @@ if (mysqli_num_rows($resultadoEmailContratante) > 0) {
 
         if (mysqli_query($con, $sql)) {
             // Inserção bem-sucedida, redirecione para a página inicial
-            echo "<script>window.location='1tela.html'</script>";
+            echo "<script>window.location='Inicio/1tela.html'</script>";
         } else {
             // Erro na inserção
             echo 'Não foi possível incluir os dados! Entre em contato com o administrador do sistema';

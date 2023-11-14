@@ -19,7 +19,7 @@
 		<h2>Esteja conectado com quem precisa de você!</h2>
 		<a href="registrocontratante.html" class="criaremp"><p>Clique para criar conta como empresa</p></a>
         <center><p>_________________________________________</p></center><br>
-		<form>
+		<form method='post' action='salvamotorista.php'>
 			<label for="nome">Nome:</label>
 			<input type="text" id="nome" name="nome" required>
 
@@ -48,14 +48,14 @@
 			</table>
 			
             <div class="button-container">
-                <a href="perfil_cam.html" style="border-radius: 30px;"><button type="submit">Criar conta</button></a>
+                <a href="../salvamotorista.php" style="border-radius: 30px;"><button type="submit">Criar conta</button></a>
             </div>
 			
 		</form>
 		<p>Já possui conta? <a href="login.html">Faça login</a></p>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="confirmarsenha.js"></script>
-    <script src="validarcpf.js"></script>
+    <script src="../confirmarsenha.js"></script>
+    <script src="../validarcpf.js"></script>
 </body>
 </html>

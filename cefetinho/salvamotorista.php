@@ -17,7 +17,7 @@ $resultado = mysqli_query($con, $verificaEmail);
 
 if (mysqli_num_rows($resultado) > 0) {
     // O email já está cadastrado, redirecione para a página inicial com uma mensagem de erro
-    echo "<script>alert('Email já cadastrado. Tente novamente.'); window.location='1tela.html'</script>";
+    echo "<script>alert('Email já cadastrado. Tente novamente.'); window.location='Inicio/1tela.html'</script>";
 } else {
     // O email não está cadastrado, insira os dados no banco de dados (em motorista)
     $sql = "INSERT INTO motorista (idmotorista, nome, cpf, email, senha, confsenha) 
@@ -25,7 +25,7 @@ if (mysqli_num_rows($resultado) > 0) {
 
     if (mysqli_query($con, $sql)) {
         // Inserção bem-sucedida, redirecione para a página inicial
-        echo "<script>window.location='1tela.html'</script>";
+        echo "<script>window.location='Inicio/1tela.html'</script>";
     } else {
         // Erro na inserção
         echo 'Não foi possível incluir os dados! Entre em contato com o administrador do sistema';
