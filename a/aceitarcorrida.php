@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="primeiratela.html"><button><img src="Imagens/voltar-fotor-20230628161115.png" alt="#"></button></a>
+        <a href="primeiratela.php"><button><img src="Imagens/voltar-fotor-20230628161115.png" alt="#"></button></a>
         <p>Detalhes do Frete</p>
     </header>
 
@@ -32,6 +32,7 @@
             $row = $result->fetch_assoc();
 
             // Preencha as informações na tabela
+            echo "<form method='post' action='aceitar.php'>"; // Altere 'seuarquivo.php' para o nome do seu arquivo PHP
             echo "<table>";
             echo "<tr><td>Até</td><td>{$row['data_limite_entrega']}</td><td>{$row['horario_limite_entrega']}</td></tr>";
             echo "<tr><td style='padding-top: 30px;'>Saída:</td><td style='padding-top: 30px;'>{$row['local_saida_carga']}</td></tr>";
@@ -43,8 +44,10 @@
             echo "<tr><td>Total de pagamento:</td><td> R$ {$row['preco_entrega']}</td></tr>";
             echo "<tr><td>Tipo de carga:</td><td>{$row['tipo_carga']}</td></tr>";
             echo "<tr><td><button style='border-radius: 30px; background-color: #4E569D; margin-top: 30px; text-align: center;'>Enviar mensagem</button></td>";
-            echo "<td><button style='border-radius: 30px; background-color: white; margin-top: 30px; text-align: center;'>Aceitar Corrida</button></td></tr>";
+            echo "<tr><td><button type='submit' name='aceitar_corrida' style='border-radius: 30px; background-color: white; margin-top: 30px; text-align: center;'>Aceitar Corrida</button></td></tr>";
             echo "</table>";
+            echo "<input type='hidden' name='id_frete' value='{$idFrete}'>";
+            echo "</form>";
         } else {
             echo "<p>Nenhum resultado encontrado para o ID do frete.</p>";
         }
@@ -59,3 +62,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
+

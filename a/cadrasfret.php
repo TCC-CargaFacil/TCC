@@ -54,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insira os dados no banco de dados, incluindo o telefone
-    $sql = "INSERT INTO frete (data_limite_entrega, horario_limite_entrega, local_saida_carga, local_destino_entrega, nome_responsavel_envio, nome_responsavel_admissao, preco_entrega, peso_entrega, tipo_carga, telefone_contratante) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO frete (data_limite_entrega, horario_limite_entrega, local_saida_carga, local_destino_entrega, nome_responsavel_envio, nome_responsavel_admissao, preco_entrega, peso_entrega, tipo_carga, telefone, id_cont) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("ssssssdiss", $data_limite_entrega, $horario_limite_entrega, $local_saida_carga, $local_destino_entrega, $nome_responsavel_envio, $nome_responsavel_admissao, $preco_entrega, $peso_entrega, $tipo_carga, $telefone);
+    $stmt->bind_param("ssssssdissi", $data_limite_entrega, $horario_limite_entrega, $local_saida_carga, $local_destino_entrega, $nome_responsavel_envio, $nome_responsavel_admissao, $preco_entrega, $peso_entrega, $tipo_carga, $telefone, $idContratante);
 
     if ($stmt->execute()) {
         // Redirecione para a página 'primeiratelacont.php'

@@ -7,7 +7,7 @@ if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
     exit();
 }
 
-$userId = $_SESSION['id'];
+$userId = $_SESSION['idContratante'];
 
 // Se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmacao']) && $_POST['confirmacao'] === 'confirmar') {

@@ -8,7 +8,7 @@ if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
     exit();
 }
 
-$userId = $_SESSION['id'];
+$userId = $_SESSION['idMotorista'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmacao']) && $_POST['confirmacao'] === 'confirmar') {
     // Sanitize o ID do usuário

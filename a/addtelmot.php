@@ -13,7 +13,7 @@ if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
 }
 
 // Obtenha o ID do usuário da sessão
-$userId = $_SESSION['id'];
+$userId = $_SESSION['idMotorista'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifique se o formulário foi enviado via POST

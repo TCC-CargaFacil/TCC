@@ -20,10 +20,10 @@
                         <a class="nav-link" href="mostraperfcam.php">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="corridas.html">Corridas</a>
+                        <a class="nav-link" href="corridas.php">Corridas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pagamentos.html">Pagamentos</a>
+                        <a class="nav-link" href="pagamentos.php">Pagamentos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="configuracoes.html">Configurações</a>
@@ -61,7 +61,7 @@
                     include("adm/conexao.php");
 
                     // Consulta para obter informações da tabela frete
-                    $sql = "SELECT * FROM frete";
+                    $sql = "SELECT * FROM frete WHERE id_mot IS NULL";
                     $result = $con->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -72,7 +72,7 @@
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='2'>Nenhum frete encontrado.</td></tr>";
+                        echo "<tr><td colspan='2'>Nenhum frete disponível.</td></tr>";
                     }
                     ?>
                 </tbody>

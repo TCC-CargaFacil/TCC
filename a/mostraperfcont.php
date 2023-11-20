@@ -69,23 +69,17 @@ $result = $con->query($sql);
                 echo "<tr>";
                 echo "<td style='font-weight: bold;'>Alterar senha:</td>";
                 echo "</tr>";
-                echo "<tr>
-                        <td>
-                            <div class='password-container'>
-                                <input type='password' id='senha' name='senha' value='" . $row['Senha'] . "'>
-                                <input type='checkbox' id='mostrarSenha' onchange='mostrarSenha()'>
-                                <label for='mostrarSenha'>Mostrar senha</label>
-                            </div>
-                        </td>
-                        <td style='color: #4E569D;'>&#9673;</td>
-                      </tr>";
+                echo "<tr>";
+                echo "<td style='color: #4E569D;'>" . $row["Senha"] . "</td>";
+                echo "<td style='color: #4E569D;'>&#9673;</td>";
+                echo "</tr>";
                 echo "<tr>";
                 echo "<td style='font-weight: bold;'>Informações para verificação:</td>";
                 echo "<td style='color: red; font-size: 10px;'>Obrigatório a verificação para corridas</td>";
                 echo "</tr>";
                 echo "<tr>";
                 echo "<td style='font-weight: bold;'>Clique para adicionar:</td>";
-                echo "<td style='font-weight: bold;'><a href='verificacao_cam.html' style='color: red;'>&#11166;</a></td>";
+                echo "<td style='font-weight: bold;'><a href='verificacao_cont.html' style='color: red;'>&#11166;</a></td>";
                 echo "</tr>";
             }
         } else {
