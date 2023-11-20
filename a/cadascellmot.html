@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Telefone - Carga Fácil</title>
+    <link rel="stylesheet" href="cadascell.css">
+</head>
+<body>
+    <header>
+        <a href="mostraperfcam.php" class="back-button">&#8592;</a><br>
+        <div class="logo-container">
+            <img src="Imagens/logo.png" alt="" style="height: 30px; width: 30px;">
+            <h1>Carga Fácil</h1>
+        </div>
+    </header>
+    <main>
+        <h2>Adicionar Número de Telefone</h2>
+
+    <p>_________________________________________</p><br>
+
+        <form action="addtelmot.php" method="post">
+            <label for="telefone">Número de Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}[0-9]{4,6}[0-9]{3,4}" placeholder="Informe seu telefone" required>
+
+            <div class="button-container">
+                <button type="submit">Adicionar Telefone</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

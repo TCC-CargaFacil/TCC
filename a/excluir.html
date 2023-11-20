@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão de Conta</title>
+    <link rel="stylesheet" href="perfil_cam.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 300px; /* Defina a largura máxima desejada */
+            width: 100%; /* Garante responsividade */
+        }
+
+        .button-container button {
+            flex: 1; /* Para os botões compartilharem o espaço disponível */
+            height: 30px;
+            font-size: 0.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-right: 10px;
+        }
+
+        #nao-excluir {
+            background-color: #323866;
+            color: white;
+            border: none;
+        }
+
+        #excluir {
+            background-color: #8B0000;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <h2>Você tem certeza de que deseja excluir sua conta?</h2>
+        <form method="post" action="excluir.php"> <!-- Altere para o nome do seu arquivo PHP de exclusão -->
+            <input type="hidden" name="confirmacao" value="confirmar"> <!-- Campo oculto indicando confirmação -->
+            <button type="submit" class="confirm-button" id="excluir">Confirmar Exclusão</button>
+            <a href="mostraperfcam.php"><button type="button" id="nao-excluir">Não Excluir</button></a>
+        </form>
+    </div>
+</body>
+</html>
