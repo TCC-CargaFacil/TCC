@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Ago-2023 às 19:36
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 7.4.29
+-- Tempo de geração: 20/11/2023 às 03:33
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contratante`
+-- Estrutura para tabela `contratante`
 --
 
 CREATE TABLE `contratante` (
@@ -34,20 +34,41 @@ CREATE TABLE `contratante` (
   `Email` varchar(50) NOT NULL,
   `Senha` varchar(50) NOT NULL,
   `ConfSenha` varchar(50) NOT NULL,
-  `Perfil` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Perfil` int(11) NOT NULL DEFAULT 1,
+  `telefone` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `contratante`
+-- Despejando dados para a tabela `contratante`
 --
 
-INSERT INTO `contratante` (`idContratante`, `Nome`, `CPF`, `Email`, `Senha`, `ConfSenha`, `Perfil`) VALUES
-(2, 'testep', '123', 'teste@contratante', '123', '123', 1);
+INSERT INTO `contratante` (`idContratante`, `Nome`, `CPF`, `Email`, `Senha`, `ConfSenha`, `Perfil`, `telefone`) VALUES
+(2, 'testep', '123', 'teste@contratante', '123', '123', 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `motorista`
+-- Estrutura para tabela `frete`
+--
+
+CREATE TABLE `frete` (
+  `id` int(11) NOT NULL,
+  `data_limite_entrega` date DEFAULT NULL,
+  `horario_limite_entrega` time DEFAULT NULL,
+  `local_saida_carga` varchar(255) DEFAULT NULL,
+  `local_destino_entrega` varchar(255) DEFAULT NULL,
+  `nome_responsavel_envio` varchar(255) DEFAULT NULL,
+  `nome_responsavel_admissao` varchar(255) DEFAULT NULL,
+  `preco_entrega` decimal(10,2) DEFAULT NULL,
+  `peso_entrega` decimal(10,2) DEFAULT NULL,
+  `tipo_carga` varchar(50) DEFAULT NULL,
+  `telefone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `motorista`
 --
 
 CREATE TABLE `motorista` (
@@ -57,37 +78,41 @@ CREATE TABLE `motorista` (
   `Email` varchar(100) NOT NULL,
   `Senha` varchar(50) NOT NULL,
   `ConfSenha` varchar(50) NOT NULL,
-  `Perfil` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Perfil` int(11) NOT NULL DEFAULT 0,
+  `telefone` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `motorista`
+-- Despejando dados para a tabela `motorista`
 --
 
-INSERT INTO `motorista` (`idMotorista`, `Nome`, `CPF`, `Email`, `Senha`, `ConfSenha`, `Perfil`) VALUES
-(3, 'teset', '123', '', '123', '123', 0),
-(4, 'tese', '123', 'eu@eu', '123', '123', 0),
-(5, 'Pabline Eduarda', '123', 'eu@eufoda', '123', '123', 0),
-(7, 'teste', '123', 'teste@motorista', '123', '123', 0);
+INSERT INTO `motorista` (`idMotorista`, `Nome`, `CPF`, `Email`, `Senha`, `ConfSenha`, `Perfil`, `telefone`) VALUES
+(7, 'teste', '123', 'teste@motorista', '123', '123', 0, NULL);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `contratante`
+-- Índices de tabela `contratante`
 --
 ALTER TABLE `contratante`
   ADD PRIMARY KEY (`idContratante`);
 
 --
--- Índices para tabela `motorista`
+-- Índices de tabela `frete`
+--
+ALTER TABLE `frete`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `motorista`
 --
 ALTER TABLE `motorista`
   ADD PRIMARY KEY (`idMotorista`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -95,6 +120,12 @@ ALTER TABLE `motorista`
 --
 ALTER TABLE `contratante`
   MODIFY `idContratante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `frete`
+--
+ALTER TABLE `frete`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `motorista`
